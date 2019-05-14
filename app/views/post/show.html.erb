@@ -1,0 +1,23 @@
+<p><strong>title:</strong> <%= @post.title%> </p>
+<p><strong>url:</strong> <%= @post.url%> </p>
+
+<%= link_to "New Comment", new_post_comment_path(@post.id)%>
+
+<table>
+  <thead>
+    <tr>
+      <td>Comment</td>
+      <td>User</td>
+    </tr>
+  </thead>
+  <tbody>
+  <% @comments.each do |c|%>
+    <tr>
+    <td><%= c.content%></td>
+    <td><%= c.user.email%></td>
+    </tr>
+    <% end %>
+  </tbody>
+<table>
+
+<%=link_to "Home", root_path%>
